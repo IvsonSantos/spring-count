@@ -1,15 +1,13 @@
 package com.example.rowcounter.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name="PERMISSIONS")
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 public class Permission {
 
     @Id

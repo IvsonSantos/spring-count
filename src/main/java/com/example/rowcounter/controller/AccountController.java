@@ -38,4 +38,13 @@ public class AccountController {
     public ResponseEntity<Long> getAccountsByJPQL() throws ParseException {
         return ResponseEntity.ok(service.getAccountsByJPQL());
     }
+
+    @GetMapping("/getAccountsByPermissionUsingJPQL")
+    public ResponseEntity<Long> getAccountsByPermissionUsingJPQL() throws ParseException {
+        return ResponseEntity.ok(service.getAccountsByPermissionUsingJPQL());
+    }
+
+
+
+
 }

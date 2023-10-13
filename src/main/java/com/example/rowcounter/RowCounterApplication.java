@@ -27,7 +27,9 @@ public class RowCounterApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Permission permission = Permission.builder().type("type1").build();
+		//Permission permission = Permission.builder().type("admin").build();
+		Permission permission = new Permission();
+		permission.setType("admin");
 		permissionRepository.save(permission);
 
 		Account account = Account.builder()

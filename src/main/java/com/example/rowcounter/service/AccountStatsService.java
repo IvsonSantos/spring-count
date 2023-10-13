@@ -44,4 +44,10 @@ public class AccountStatsService {
         return (long) query.getSingleResult();
     }
 
+    public long getAccountsByPermissionUsingJPQL() throws ParseException {
+        Query query = entityManager.createQuery("SELECT COUNT(*) FROM Account a WHERE a.permission = ?1");
+        query.setParameter(1, permissionRepository.findByType("admin"));
+        return (long) query.getSingleResult();
+    }
+
 }
