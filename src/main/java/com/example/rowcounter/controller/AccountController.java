@@ -18,23 +18,13 @@ public class AccountController {
     @Autowired
     private AccountStatsService service;
 
-    @Autowired
-    private AccountRepository repository;
-
     @GetMapping("/count")
     public ResponseEntity<Long> getNumber() {
-
-        Account account = Account.builder()
-                .email("teste@test.com")
-                .build();
-        Account account2 = Account.builder()
-                .email("teste@test.com")
-                .build();
-        Account account3 = Account.builder()
-                .email("teste@test.com")
-                .build();
-        repository.saveAll(Arrays.asList(account, account2, account3));
-
         return ResponseEntity.ok(service.getAccountCount());
+    }
+
+    @GetMapping("/countByName")
+    public ResponseEntity<Long> countByName() {
+        return ResponseEntity.ok(service.getAccountCountByUsername());
     }
 }
