@@ -33,4 +33,9 @@ public class AccountController {
     public ResponseEntity<Long> getAccountCountByPermissionAndCreatedOn() throws ParseException {
         return ResponseEntity.ok(service.getAccountCountByPermissionAndCreatedOn());
     }
+
+    @GetMapping("/getAccountsByJPQL")
+    public ResponseEntity<Long> getAccountsByJPQL() throws ParseException {
+        return ResponseEntity.ok(service.getAccountsByJPQL());
+    }
 }
